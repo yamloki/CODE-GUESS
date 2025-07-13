@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- 🌌 Background Animation -->
+  <div class="stars"></div>
+
+  <!-- 🎉 Confetti Celebration -->
+  <div id="confetti-wrapper"></div>
+
+  <!-- 🎆 Firework Particles -->
+  <div id="firework-wrapper"></div>
+
+  <!-- 🎮 Game Interface -->
+  <div id="wrapper">
+    <h1>Code Guess</h1>
+    <p>Try and guess a random number between 1 and 100.</p>
+    <p>You have <strong>7 attempts</strong> to guess the right number.</p>
+
+    <form class="form">
+      <label for="guessField" id="guess">Game of Guess</label>
+      <input type="number" id="guessField" placeholder="Enter the number" />
+      <input type="submit" id="subt" value="Check!" />
+    </form>
+
+    <div class="resultParas">
+      <p>Previous Guesses: <span class="guesses"></span></p>
+      <p>Guesses Remaining: <span class="lastResult">7</span></p>
+      <p class="lowOrHi"></p>
+      <p>Lives Remaining: <span class="lives"></span></p>
+    </div>
+  </div>
+
+  <!-- 🔊 Sound Effects -->
+  <audio id="win-sound" src="win.mp3"></audio>
+  <audio id="lose-sound" src="lose.mp3"></audio>
+  <audio id="click-sound" src="click.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+/* 🌐 Global Reset & Typography */
+html {
+  font-family: sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌌 Page Background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #040b47, #410b0b);
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🎮 Game Container */
+#wrapper {
+  border: 2px solid #1db954;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #fffb17;
+  text-align: center;
+  width: 450px;
+  background-color: #102415;
+  color: #d4ffd9;
+  font-size: 25px;
+  padding: 20px;
+}
+
+/* 🔥 Header */
+h1 {
+  font-size: 60px;
+  background-color: #0f3d23;
+  color: #00ff73;
+  padding: 10px;
+  text-shadow: 0 0 5px #00ff73;
+}
+
+/* 🧾 Paragraphs */
+p {
+  margin: 10px;
+  font-size: 16px;
+  color: #b7fdd2;
+}
+
+/* 🟩 Input Field */
+#guessField {
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 25px;
+  border: 3px solid #27ec76;
+  border-radius: 6px;
+  text-align: center;
+  color: #000;
+}
+
+/* ✅ Button */
+#subt {
+  background-color: #1db954;
+  color: #fff;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
+  margin-top: 40px;
+  transition: all 0.3s ease;
+}
+#subt:hover {
+  background-color: #00ff73;
+  box-shadow: 0 0 10px #00ff73;
+  transform: scale(1.05);
+}
+
+/* 💖 Lives & Feedback Boxes */
+.guesses,
+.lastResult,
+.lives {
+  background-color: #164028;
+  padding: 7px;
+  color: #adffbc;
+  margin: 5px auto;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+/* ✨ Glowing Message */
+.lowOrHi h2 {
+  color: #54ff9f;
+  text-shadow: 0 0 8px #00ff73;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { text-shadow: 0 0 5px #00ff73; }
+  50% { text-shadow: 0 0 20px #00ff73; }
+  100% { text-shadow: 0 0 5px #00ff73; }
+}
+
+/* 🎉 Confetti Container & Animation */
+#confetti-wrapper,
+#firework-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: fall 3s linear forwards;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* 🎆 Firework Animation */
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: explode 1.5s ease-out forwards;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+@keyframes explode {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(var(--x), var(--y)); opacity: 0; }
+}
+
+/* 📱 Responsive Design */
+@media screen and (max-width: 500px) {
+  #wrapper {
+    width: 90%;
+    font-size: 22px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  #guess {
+    font-size: 36px;
+  }
+  #guessField,
+  #subt {
+    width: 100%;
+    font-size: 18px;
+  }
+  .guesses,
+  .lastResult,
+  .lives {
+    font-size: 16px;
+  }
+}
